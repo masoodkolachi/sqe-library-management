@@ -32,6 +32,19 @@ public class gradebook {
         scores.add(score);
     }
 
+    /**
+     * Adds a score to this student's record.
+     *
+     * @param score the score to add; must be non-negative
+     * @throws IllegalArgumentException if score is negative
+     */
+    public void addScore(double score) {
+        if (score < 0) {
+            throw new IllegalArgumentException("Score cannot be negative");
+        }
+        scores.add(score);
+    }
+
     public void addScore(double score) {
         scores.add(score);
     }
