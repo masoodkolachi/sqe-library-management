@@ -9,14 +9,18 @@ public class studentGradebook {
     }
 
     public double studentAverage() {
+        if (marks.length == 0) {
+            return 0.0;
+        }
+    
         int sum = 0;
-
+    
         for (int mark : marks) {
             sum += mark;
         }
-
+    
         return (double) sum / marks.length;
-    }
+    } 
 
     public static void main(String[] args) {
 
