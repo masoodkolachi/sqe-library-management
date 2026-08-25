@@ -5,6 +5,13 @@ public class studentGradebook {
 
     public Student(String name, int[] marks) {
         this.name = name;
+    
+        for (int mark : marks) {
+            if (mark < 0) {
+                throw new IllegalArgumentException("Score cannot be negative");
+            }
+        }
+    
         this.marks = marks;
     }
 
