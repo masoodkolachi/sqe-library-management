@@ -3,6 +3,7 @@ public class Student {
     int rollNumber;
     String name;
     int[] marks;
+    
 
     public Student(int rollNumber, String name, int[] marks) {
         this.rollNumber = rollNumber;
