@@ -1,45 +1,29 @@
+package gradebook;
+
 public class studentGradebook {
-
-    String name;
-    int[] marks;
-
-    public Student(String name, int[] marks) {
-        this.name = name;
-        this.marks = marks;
-    }
-
-    public double studentAverage() {
-        int sum = 0;
-
-        for (int mark : marks) {
-            sum += mark;
-        }
-
-        return (double) sum / marks.length;
-    }
 
     public static void main(String[] args) {
 
-        Student[] students = {
-                new Student("Ali", new int[] { 80, 75, 90, 85, 88 }),
-                new Student("Ahmed", new int[] { 70, 65, 78, 72, 75 }),
-                new Student("Sara", new int[] { 92, 88, 95, 90, 94 }),
-                new Student("Ayesha", new int[] { 85, 80, 82, 88, 90 }),
-                new Student("Hassan", new int[] { 60, 68, 65, 70, 62 }),
-                new Student("Fatima", new int[] { 78, 82, 80, 75, 85 }),
-                new Student("Usman", new int[] { 88, 85, 90, 87, 92 }),
-                new Student("Zainab", new int[] { 95, 92, 96, 94, 90 }),
-                new Student("Bilal", new int[] { 72, 70, 68, 75, 74 }),
-                new Student("Mariam", new int[] { 84, 86, 80, 82, 88 })
+        gradebook[] students = {
+                createStudent("Ali", "001", 80, 75, 90, 85, 88),
+                createStudent("Ahmed", "002", 70, 65, 78, 72, 75),
+                createStudent("Sara", "003", 92, 88, 95, 90, 94),
+                createStudent("Ayesha", "004", 85, 80, 82, 88, 90),
+                createStudent("Hassan", "005", 60, 68, 65, 70, 62),
+                createStudent("Fatima", "006", 78, 82, 80, 75, 85),
+                createStudent("Usman", "007", 88, 85, 90, 87, 92),
+                createStudent("Zainab", "008", 95, 92, 96, 94, 90),
+                createStudent("Bilal", "009", 72, 70, 68, 75, 74),
+                createStudent("Mariam", "010", 84, 86, 80, 82, 88)
         };
 
-        double totalAverage = 0;
+        double totalAverage = 0.0;
 
-        for (Student student : students) {
-            double average = student.studentAverage();
+        for (gradebook student : students) {
+            double average = student.average();
 
             System.out.println(
-                    student.name + " Average: " + average);
+                    student.getName() + " (" + student.getRollNo() + ") Average: " + average);
 
             totalAverage += average;
         }
@@ -47,5 +31,15 @@ public class studentGradebook {
         double overallAverage = totalAverage / students.length;
 
         System.out.println("\nOverall Average: " + overallAverage);
+    }
+
+    private static gradebook createStudent(String name, String rollNo, double... scores) {
+        gradebook student = new gradebook(name, rollNo);
+
+        for (double score : scores) {
+            student.addScore(score);
+        }
+
+        return student;
     }
 }
