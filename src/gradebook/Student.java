@@ -1,4 +1,4 @@
-public class studentGradebook {
+public class Student {
 
     String name;
     int[] marks;
@@ -21,9 +21,9 @@ public class studentGradebook {
     public static void main(String[] args) {
 
         Student[] students = {
-                new Student("Ali", new int[] { 80, 75, 90, 85, 88 }),
+                new Student("zunair", new int[] { 80, 75, 90, 85, 88 }),
                 new Student("Ahmed", new int[] { 70, 65, 78, 72, 75 }),
-                new Student("Sara", new int[] { 92, 88, 95, 90, 94 }),
+                new Student("Masood", new int[] { 92, 88, 95, 90, 94 }),
                 new Student("Ayesha", new int[] { 85, 80, 82, 88, 90 }),
                 new Student("Hassan", new int[] { 60, 68, 65, 70, 62 }),
                 new Student("Fatima", new int[] { 78, 82, 80, 75, 85 }),
